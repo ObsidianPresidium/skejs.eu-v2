@@ -1,2 +1,149 @@
-<p><a href="load">Loading screen</a></p>
-<p><a href="music-test">Play music</a></p>
+<style lang="scss">
+    @import "@fontsource/cantarell/700";
+    @import "@fontsource/inter";
+    .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -999;
+        background-image: radial-gradient(at top right, #260c86, #15062b);
+        background-size: 200% 200%;
+        width: 100vw;
+        height: 100vh;
+        animation: siteIn 1500ms ease-out;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    
+    h1 {
+        color: white;
+        font-size: 3rem;
+        font-family: "Cantarell", sans-serif;
+        margin: 2rem 0;
+        text-align: center;
+    }
+    
+    p {
+        font-family: sans-serif;
+        color: white;
+        line-height: 1.15;
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+    
+    a {
+        &:link,
+        &:visited {
+            color: #00aaff;
+            text-decoration: none;
+        }
+    }
+    
+    .item {
+        border-radius: 1rem;
+        background-color: rgba(255, 255, 255, 0.15);
+        padding: 1rem;
+        width: 25rem;
+        flex-basis: 25rem;
+        flex-grow: 1;
+    }
+    
+    .content-box {
+        margin: 1rem auto;
+        max-width: min(100%, 60rem);
+    }
+    
+    .item-box {
+        margin: 0 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    
+    ul {
+        list-style: none;
+        margin: -0.5rem 1rem 1rem;
+    }
+    
+    li {
+        position: relative; 
+        color: white;
+        font-family: sans-serif;
+        line-height: 1.15;
+        margin-left: 1rem;
+        &:not(:last-child) {
+            margin-bottom: 0.2rem;
+        }
+        &::before {
+            content: "➙";
+            position: absolute;
+            color: white;
+            left: -1rem;
+            margin-right: 0.5rem;
+            opacity: 0;
+            transform: translateX(-1rem);
+            transition: all 150ms ease-in-out;
+        }
+        &:hover::before {
+            transform: none;
+            opacity: 1;
+        }
+    }
+    
+    h2 {
+        color: white;
+        font-size: 2rem;
+        font-family: "Inter", sans-serif;
+        margin-bottom: 2rem;
+        text-align: left;
+        text-transform: uppercase;
+        padding-left: 1rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 0.1rem solid white;
+    }
+    
+    @keyframes siteIn {
+        0% {
+            background-position: 0% 0%;
+        }
+        100% {
+            background-position: 50% 50%;
+        }
+    }
+</style>
+
+<script lang="ts">
+    import Social from "$lib/Social.svelte";
+</script>
+
+<div class="background">
+</div>
+<div class="content-box">
+    <h1>Welcome to skejs.eu! 👋</h1>
+    <div class="item-box">
+        <div class="bio item">
+            <p>This website is owned by <a href="https://github.com/ObsidianPresidium">ObsidianPresidium</a> (you might also know me as <a href="https://steamcommunity.com/id/SSBhbSBpbiB5b3VyIHdhbGxzLg/">ember!</a>), an aspiring developer, tech and open-source enthusiast 🧑‍💻 currently studying at AspIT Copenhagen 👨🏻‍🎓 located in <span title="Denmark!">🇩🇰</span>, <span title="Europe!">🇪🇺</span>.</p>
+            <p>You're looking at my personal website, which I plan to turn into something cool later!</p>
+            <p>My favorite tools to work with are:</p>
+            <ul>
+                <li>🧰 Svelte (and SvelteKit!)</li>
+                <li>🌐 Web</li>
+                <li>🐧 GNU/Linux</li>
+                <li>🤖 Arduino</li>
+                <li>🐍 Python</li>
+                <li>🔷 .NET</li>
+            </ul>
+            <p>Besides development, my hobbies are linguistics, e-sports, hiking, politics, and cracking open a cold one after a long day of work! 🍻<p>
+            <p>Use the box on the right to connect with me!</p>
+        </div>
+        <div class="socials-box item">
+            <h2>Socials</h2>
+            <div class="socials">
+                <Social image="github.svg" text="GitHub" link="https://github.com/ObsidianPresidium" />
+                <Social image="mastodon.svg" text="Mastodon" link="https://mastodon.nu/@obbyluckyy" />
+                <Social image="steam.svg" text="Steam" link="https://steamcommunity.com/id/SSBhbSBpbiB5b3VyIHdhbGxzLg/" />
+            </div>
+        </div>
+    </div>
+</div>
