@@ -1,6 +1,7 @@
 <style lang="scss">
     @import "@fontsource/cantarell/700";
     @import "@fontsource/inter";
+
     .background {
         position: fixed;
         top: 0;
@@ -34,7 +35,8 @@
     
     a {
         &:link,
-        &:visited {
+        &:visited,
+        &:active {
             color: #00aaff;
             text-decoration: none;
         }
@@ -102,6 +104,44 @@
         padding-bottom: 0.25rem;
         border-bottom: 0.1rem solid white;
     }
+
+    .wave {
+        animation: wave 3s 2;
+    }
+
+    .hand {
+        display: inline-block;
+        transform-origin: 70% 70%;
+        cursor: grab;
+        transition: scale 500ms, rotate 500ms;
+    }
+
+    // .hand:hover {
+    //     scale: 0.6;
+    //     rotate: 30deg;
+    // }
+
+    .high-five {
+        animation: high-five 500ms 1 ease-out;
+        transform-origin: 70% 70%;
+        rotate: 30deg;
+        cursor: grab;
+    }
+
+    .particles {
+        border-radius: 50%;
+        border: 1px solid white;
+        animation: particles 500ms 1;
+        translate: -2.75rem 1rem;
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+        pointer-events: none;
+    }
+
+    .hidden {
+        display: none !important;
+    }
     
     @keyframes siteIn {
         0% {
@@ -111,16 +151,91 @@
             background-position: 50% 50%;
         }
     }
+
+    @keyframes wave {
+        0% {
+            transform: rotate(0deg);
+        }
+        12.5% {
+            transform: rotate(15deg);
+        }
+        25% {
+            transform: rotate(0deg);
+        }
+        37.5% {
+            transform: rotate(15deg);
+        }
+        50% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes high-five {
+        0% {
+            transform: none;
+        }
+        25% {
+            transform: scale(3) translate(15%, 7%);
+        }
+        50% {
+            transform: scale(3) translate(15%, 7%);
+        }
+        100% {
+            transform: none;
+        }
+    }
+
+    @keyframes particles {
+        0% {
+            opacity: 0;
+        }
+        33% {
+            transform: scale(2);
+            opacity: 0;
+        }
+        50% {
+            transform: scale(4);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(8);
+            opacity: 0;
+        }
+    }
 </style>
 
 <script lang="ts">
     import Social from "$lib/Social.svelte";
+    // TODO: fix the animation!
+    // import { onMount } from "svelte";
+    // let hand: HTMLSpanElement;
+    // let particles: HTMLSpanElement;
+    // let animationEndHandler: () => void;
+    // let clickHandler: () => void;
+    // onMount(() => {
+    //     hand.classList.add("wave");
+    //     animationEndHandler = () => {
+    //         hand.classList.remove("wave");
+    //     };
+    //     clickHandler = () => {
+    //         hand.classList.add("high-five");
+    //         particles.classList.remove("hidden");
+    //         animationEndHandler = () => {
+    //             hand.classList.remove("high-five");
+    //             particles.classList.add("hidden");
+    //         };
+    //     };
+    // });
 </script>
 
 <div class="background">
 </div>
 <div class="content-box">
-    <h1>Welcome to skejs.eu! 👋</h1>
+    <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
+    <h1>Welcome to skejs.eu! <span class="hand">👋</span><span class="particles hidden">&nbsp;</span></h1>
     <div class="item-box">
         <div class="bio item">
             <p>This website is owned by <a href="https://github.com/ObsidianPresidium">ObsidianPresidium</a> (you might also know me as <a href="https://steamcommunity.com/id/SSBhbSBpbiB5b3VyIHdhbGxzLg/">ember!</a>), an aspiring developer, tech and open-source enthusiast 🧑‍💻 currently studying at AspIT Copenhagen 👨🏻‍🎓 located in <span title="Denmark!">🇩🇰</span>, <span title="Europe!">🇪🇺</span>.</p>
@@ -133,6 +248,7 @@
                 <li>🤖 Arduino</li>
                 <li>🐍 Python</li>
                 <li>🔷 .NET</li>
+                <li>🐋 Docker</li>
             </ul>
             <p>Besides development, my hobbies are linguistics, e-sports, hiking, politics, and cracking open a cold one after a long day of work! 🍻<p>
             <p>Use the box on the right to connect with me!</p>
