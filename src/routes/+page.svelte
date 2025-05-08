@@ -209,8 +209,10 @@
 
 <script lang="ts">
     import Social from "$lib/Social.svelte";
+    import { onMount } from "svelte";
+
+    let siteName = $state("my website");
     // TODO: fix the animation!
-    // import { onMount } from "svelte";
     // let hand: HTMLSpanElement;
     // let particles: HTMLSpanElement;
     // let animationEndHandler: () => void;
@@ -229,16 +231,20 @@
     //         };
     //     };
     // });
+
+    onMount(() => {
+        siteName = window.location.hostname;
+    });
 </script>
 
 <div class="background">
 </div>
 <div class="content-box">
     <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
-    <h1>Welcome to skejs.eu! <span class="hand">👋</span><span class="particles hidden">&nbsp;</span></h1>
+    <h1>Welcome to {siteName}! <span class="hand">👋</span><span class="particles hidden">&nbsp;</span></h1>
     <div class="item-box">
         <div class="bio item">
-            <p>This website is owned by <a href="https://github.com/ObsidianPresidium">ObsidianPresidium</a> (you might also know me as <a href="https://steamcommunity.com/id/SSBhbSBpbiB5b3VyIHdhbGxzLg/">ember!</a>), an aspiring developer, tech and open-source enthusiast 🧑‍💻 currently studying at AspIT Copenhagen 👨🏻‍🎓 located in <span title="Denmark!">🇩🇰</span>, <span title="Europe!">🇪🇺</span>.</p>
+            <p>This website is owned by <a href="https://github.com/ObsidianPresidium">ObsidianPresidium</a> (you might also know me as Emil, or <a href="https://steamcommunity.com/id/SSBhbSBpbiB5b3VyIHdhbGxzLg/">ember!</a>), an aspiring developer, tech and open-source enthusiast 🧑‍💻 currently studying at AspIT Copenhagen 👨🏻‍🎓 located in <span title="Denmark!">🇩🇰</span>, <span title="Europe!">🇪🇺</span>.</p>
             <p>You're looking at my personal website, which I plan to turn into something cool later!</p>
             <p>My favorite tools to work with are:</p>
             <ul>
