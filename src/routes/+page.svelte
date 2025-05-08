@@ -234,6 +234,7 @@
 
     onMount(() => {
         siteName = window.location.hostname;
+        document.title = siteName.substring(0, 1).toUpperCase() + siteName.substring(1);
     });
 </script>
 
