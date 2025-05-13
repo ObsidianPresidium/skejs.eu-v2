@@ -212,6 +212,14 @@
     import { onMount } from "svelte";
 
     let siteName = $state("my website");
+    let socialsBoxRelativePosition = $state("on the right");
+    const getSocialsBoxRelativePosition = () => {
+        if (window.innerWidth < 928) {
+            return "below";
+        } else {
+            return "on the right";
+        }
+    };
     // TODO: fix the animation!
     // let hand: HTMLSpanElement;
     // let particles: HTMLSpanElement;
@@ -235,6 +243,8 @@
     onMount(() => {
         siteName = window.location.hostname;
         document.title = siteName.substring(0, 1).toUpperCase() + siteName.substring(1);
+        socialsBoxRelativePosition = getSocialsBoxRelativePosition()
+        window.addEventListener("resize", () => socialsBoxRelativePosition = getSocialsBoxRelativePosition());
     });
 </script>
 
@@ -258,14 +268,19 @@
                 <li>🐋 Docker</li>
             </ul>
             <p>Besides development, my hobbies are linguistics, e-sports, hiking, politics, and cracking open a cold one after a long day of work! 🍻<p>
-            <p>Use the box on the right to connect with me!</p>
+            <p>Use the box {socialsBoxRelativePosition} to connect with me!</p>
         </div>
         <div class="socials-box item">
             <h2>Socials</h2>
             <div class="socials">
                 <Social image="github.svg" text="GitHub" link="https://github.com/ObsidianPresidium" />
                 <Social image="mastodon.svg" text="Mastodon" link="https://mastodon.nu/@obbyluckyy" />
-                <Social image="steam.svg" text="Steam" link="https://steamcommunity.com/id/SSBhbSBpbiB5b3VyIHdhbGxzLg/" />
+            </div>
+        </div>
+        <div class="friends-box item">
+            <h2>Friends of skejs</h2>
+            <div class="friends">
+                <Social emoji="🐱" text="bambah.eu" link="https://bambah.eu" />
             </div>
         </div>
     </div>
