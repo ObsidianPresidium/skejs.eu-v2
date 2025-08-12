@@ -267,7 +267,7 @@
                 <li>🔷 .NET</li>
                 <li>🐋 Docker</li>
             </ul>
-            <p>Besides development, my hobbies are linguistics, e-sports, hiking, politics, and cracking open a cold one after a long day of work! 🍻<p>
+            <p>Besides development, my hobbies are linguistics, e-sports and hiking!<p>
             <p>Use the box {socialsBoxRelativePosition} to connect with me!</p>
         </div>
         <div class="socials-box item">
