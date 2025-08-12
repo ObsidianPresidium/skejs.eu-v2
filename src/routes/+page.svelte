@@ -255,7 +255,7 @@
     <h1>Welcome to {siteName}! <span class="hand">👋</span><span class="particles hidden">&nbsp;</span></h1>
     <div class="item-box">
         <div class="bio item">
-            <p>This website is owned by Emil (you might also know me as <a href="https://github.com/ObsidianPresidium">ObsidianPresidium</a>, or <a href="https://steamcommunity.com/id/SSBhbSBpbiB5b3VyIHdhbGxzLg/">ember</a>!), an aspiring developer, tech and open-source enthusiast 🧑‍💻 currently studying at AspIT Copenhagen 👨🏻‍🎓 located in <span title="Denmark!">🇩🇰</span>, <span title="Europe!">🇪🇺</span>.</p>
+            <p>This website is owned by Emil (you might also know me as <a href="https://github.com/ObsidianPresidium">ObsidianPresidium</a>, or ember!), a developer, tech and open-source enthusiast 🧑‍💻 currently studying at AspIT Copenhagen 👨🏻‍🎓 located in <span title="Denmark!">🇩🇰</span>, <span title="Europe!">🇪🇺</span>.</p>
             <p>You're looking at my personal website, which I plan to turn into something cool later!</p>
             <p>My favorite tools to work with are:</p>
             <ul>
