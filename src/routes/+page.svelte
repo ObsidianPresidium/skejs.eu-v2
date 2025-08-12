@@ -274,6 +274,7 @@
             <h2>Socials</h2>
             <div class="socials">
                 <Social image="github.svg" text="GitHub" link="https://github.com/ObsidianPresidium" />
+                <Social image="linkedin2.svg" text="LinkedIn" link="https://linkedin.com/in/emil-aarestrup-a353a31b6" />
                 <Social image="mastodon.svg" text="Mastodon" link="https://mastodon.nu/@obbyluckyy" />
             </div>
         </div>
