@@ -4,8 +4,7 @@
     $link-bracket-margin: 0.6rem;
 
     .box {
-        max-width: 30rem;
-        min-width: 20rem;
+        width: 20rem;
         min-height: 10rem;
         padding: 1rem;
         background-color: #ffffff88;
@@ -58,7 +57,7 @@
         color: black;
         line-height: 1.15;
         &:not(:last-child) {
-            margin-bottom: 1rem;
+            margin-bottom: 0.25rem;
         }
     }
 

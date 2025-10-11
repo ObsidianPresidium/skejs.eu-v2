@@ -4,11 +4,14 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         overflow: hidden;
         z-index: -1;
-        background-color: black;
+        background: linear-gradient(143deg, #c42525, #af126d, #04a9db);
+        background-size: 600% 600%;
+        
+        animation: backgroundLoadingAnimation 8000ms infinite;
 
         video {
             position: absolute;
@@ -94,6 +97,12 @@
         text-align: center;
         font-family: "Inter", sans-serif;
         margin-bottom: 1rem;
+    }
+
+    @keyframes backgroundLoadingAnimation {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
     }
 </style>
 
