@@ -1,3 +1,13 @@
+<<<<<<< Updated upstream
+=======
+<script lang="ts">
+    import Banner from "$lib/Banner.svelte";
+    import Prompt from "$lib/Prompt.svelte";
+    import Tagline from "$lib/Tagline.svelte";
+    import TerminalBox from "$lib/TerminalBox.svelte";
+
+</script>
+>>>>>>> Stashed changes
 <style lang="scss">
     @import "@fontsource/cantarell/700";
     @import "@fontsource/inter";
@@ -207,6 +217,7 @@
     }
 </style>
 
+<<<<<<< Updated upstream
 <script lang="ts">
     import Social from "$lib/Social.svelte";
     import { onMount } from "svelte";
@@ -249,6 +260,37 @@
 </script>
 
 <div class="background">
+=======
+<div class="bg"></div>
+<div class="body">
+<Banner />
+<Tagline />
+<div class="content">
+    <TerminalBox width={40} margin="1ch 2ch" title="Introduction">
+        <p>This website is owned by Emil (you might also know me as <a href="https://github.com/ObsidianPresidium">ObsidianPresidium</a>, or ember!), a developer, tech and open-source enthusiast 🧑‍💻 currently working at Cargoflux located in <span title="Denmark!">🇩🇰</span>, <span title="Europe!">🇪🇺</span>.</p>
+        <p>You're looking at my personal website, which I plan to turn into something cool later!</p>
+    </TerminalBox>
+    <TerminalBox width={35} margin="1ch 2ch" title="Favorite tools">
+        <p>&nbsp;&nbsp;* 🧰 Svelte (and SvelteKit)<br>
+        &nbsp;&nbsp;* 🌐 Vue.js<br>
+        &nbsp;&nbsp;* 🐧 Linux<br>
+        &nbsp;&nbsp;* 🤖 Arduino<br>
+        &nbsp;&nbsp;* 🐍 Python<br>
+        &nbsp;&nbsp;* 🐋 Docker<br>
+        </p>
+    </TerminalBox>
+    <TerminalBox width={30} margin="1ch 2ch" title="Socials">
+        <p><a href="https://github.com/ObsidianPresidium">GitHub</a></p>
+        <p><a href="https://linkedin.com/in/emil-aarestrup-a353a31b6">LinkedIn</a></p>
+        <p><a href="https://mastodon.nu/@obbyluckyy">Mastodon.nu</a></p>
+    </TerminalBox>
+    <TerminalBox width={30} margin="1ch 2ch" title="Friends of Skejs">
+        <p><a href="https://bambah.eu">🐱 bambah.eu</a></p>
+    </TerminalBox>
+</div>
+<div class="prompt-container">
+<Prompt />
+>>>>>>> Stashed changes
 </div>
 <div class="content-box">
     <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
