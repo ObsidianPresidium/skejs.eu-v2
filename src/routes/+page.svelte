@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 <script lang="ts">
     import Banner from "$lib/Banner.svelte";
     import Prompt from "$lib/Prompt.svelte";
@@ -7,7 +5,6 @@
     import TerminalBox from "$lib/TerminalBox.svelte";
 
 </script>
->>>>>>> Stashed changes
 <style lang="scss">
     @import "$lib/global";
     .body {
@@ -51,50 +48,6 @@
     }
 </style>
 
-<<<<<<< Updated upstream
-<script lang="ts">
-    import Social from "$lib/Social.svelte";
-    import { onMount } from "svelte";
-
-    let siteName = $state("my website");
-    let socialsBoxRelativePosition = $state("on the right");
-    const getSocialsBoxRelativePosition = () => {
-        if (window.innerWidth < 928) {
-            return "below";
-        } else {
-            return "on the right";
-        }
-    };
-    // TODO: fix the animation!
-    // let hand: HTMLSpanElement;
-    // let particles: HTMLSpanElement;
-    // let animationEndHandler: () => void;
-    // let clickHandler: () => void;
-    // onMount(() => {
-    //     hand.classList.add("wave");
-    //     animationEndHandler = () => {
-    //         hand.classList.remove("wave");
-    //     };
-    //     clickHandler = () => {
-    //         hand.classList.add("high-five");
-    //         particles.classList.remove("hidden");
-    //         animationEndHandler = () => {
-    //             hand.classList.remove("high-five");
-    //             particles.classList.add("hidden");
-    //         };
-    //     };
-    // });
-
-    onMount(() => {
-        siteName = window.location.hostname;
-        document.title = siteName.substring(0, 1).toUpperCase() + siteName.substring(1);
-        socialsBoxRelativePosition = getSocialsBoxRelativePosition()
-        window.addEventListener("resize", () => socialsBoxRelativePosition = getSocialsBoxRelativePosition());
-    });
-</script>
-
-<div class="background">
-=======
 <div class="bg"></div>
 <div class="body">
 <Banner />
@@ -121,10 +74,6 @@
     <TerminalBox width={30} margin="1ch 2ch" title="Friends of Skejs">
         <p><a href="https://bambah.eu">🐱 bambah.eu</a></p>
     </TerminalBox>
-</div>
-<div class="prompt-container">
-<Prompt />
->>>>>>> Stashed changes
 </div>
 <div class="prompt-container">
 <Prompt />
