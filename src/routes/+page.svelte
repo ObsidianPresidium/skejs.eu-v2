@@ -23,11 +23,18 @@
             margin-bottom: 1ch;
         }
     }
+    a,
+    a:link,
+    a:visited {
+        color: #00aaff;
+        text-decoration: none;
+    }
     .content {
         display: flex;
         gap: 3rem;
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
     }
 </style>
 
@@ -48,8 +55,13 @@
         &nbsp;&nbsp;* 🐋 Docker<br>
         </p>
     </TerminalBox>
-    <TerminalBox>
-        p
+    <TerminalBox width={30} margin="1ch 2ch" title="Socials">
+        <p><a href="https://github.com/ObsidianPresidium">GitHub</a></p>
+        <p><a href="https://linkedin.com/in/emil-aarestrup-a353a31b6">LinkedIn</a></p>
+        <p><a href="https://mastodon.nu/@obbyluckyy">Mastodon.nu</a></p>
+    </TerminalBox>
+    <TerminalBox width={30} margin="1ch 2ch" title="Friends of Skejs">
+        <p><a href="https://bambah.eu">🐱 bambah.eu</a></p>
     </TerminalBox>
 </div>
 </div>
