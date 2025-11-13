@@ -39,9 +39,9 @@
 
 <script lang="ts">
     import figlet from "figlet";
+    import { siteName } from "$lib/siteName";
     import { onMount } from "svelte";
 
-    let siteName = "aarestrup.dev";
     let fig = $state("Emil Aarestrup");
     let terrace = null;
     let pre: HTMLPreElement;
@@ -77,10 +77,10 @@
                 // ignore font load errors; figlet will fall back
             }
 
-            document.title = siteName.substring(0, 1).toUpperCase() + siteName.substring(1);
+            document.title = $siteName.substring(0, 1).toUpperCase() + $siteName.substring(1);
 
             try {
-                const rendered = await figlet.text(siteName, {
+                const rendered = await figlet.text($siteName, {
                     font: "Terrace",
                     whitespaceBreak: true
                 });
@@ -88,8 +88,8 @@
                 fig = rendered.replace(/^\n+/, "");
                 fig = fig.slice(8);
             } catch (e) {
-                // fallback to plain siteName if figlet fails
-                fig = siteName;
+                // fallback to plain $siteName if figlet fails
+                fig = $siteName;
             }
 
             // Observe container size changes (handles window resize and layout changes)

@@ -3,6 +3,12 @@
     import Prompt from "$lib/Prompt.svelte";
     import Tagline from "$lib/Tagline.svelte";
     import TerminalBox from "$lib/TerminalBox.svelte";
+    import { setSiteName } from "$lib/siteName";
+    import { onMount } from "svelte";
+    
+    onMount(() => {
+        setSiteName(window.location.hostname);
+    })
 
 </script>
 <style lang="scss">

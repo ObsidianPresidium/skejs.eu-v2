@@ -29,9 +29,9 @@
 </style>
 
 <script lang="ts">
+    import { siteName } from "$lib/siteName";
     import { onMount } from "svelte";
 
-    let siteName = "aarestrup.dev";
     let text = $state("");
     let funnyPromptsWritten = 0;
     const funnyPrompts = [
@@ -71,4 +71,4 @@
     onMount(typeStuff);
 </script>
 
-<pre>emil@{siteName}<span style="color: white">:</span>~$ <span style="color: white">{text}</span><span class="blink">█</span></pre>
+<pre>emil@{$siteName}<span style="color: white">:</span>~$ <span style="color: white">{text}</span><span class="blink">█</span></pre>

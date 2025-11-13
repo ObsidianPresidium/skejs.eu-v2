@@ -27,9 +27,7 @@
         "I would put a joke about UDP here, but you might not get it"
     ];
 
-    onMount(() => {
-        text = taglines[Math.floor(Math.random() * taglines.length)];
-    });
+    text = taglines[Math.floor(Math.random() * taglines.length)];
 </script>
 
 <p>"{text}"</p>
