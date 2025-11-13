@@ -1,5 +1,6 @@
 <script lang="ts">
     import Banner from "$lib/Banner.svelte";
+    import Prompt from "$lib/Prompt.svelte";
     import TerminalBox from "$lib/TerminalBox.svelte";
 
 </script>
@@ -28,6 +29,10 @@
     a:visited {
         color: #00aaff;
         text-decoration: none;
+        cursor: pointer !important;
+        &:hover {
+            text-decoration: underline;
+        }
     }
     .content {
         display: flex;
@@ -35,6 +40,10 @@
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
+    }
+
+    .prompt-container {
+        margin-top: 16ch;
     }
 </style>
 
@@ -63,5 +72,8 @@
     <TerminalBox width={30} margin="1ch 2ch" title="Friends of Skejs">
         <p><a href="https://bambah.eu">🐱 bambah.eu</a></p>
     </TerminalBox>
+</div>
+<div class="prompt-container">
+<Prompt />
 </div>
 </div>
