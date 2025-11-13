@@ -23,7 +23,8 @@
         "Yeah, that'll *definitely* take one or two days tops",
         "Y'all gotta try saftemælk",
         "Probably yapping about Norse linguistics again",
-        "Who's rallying the troops?"
+        "Who's rallying the troops?",
+        "I would put a joke about UDP here, but you might not get it"
     ];
 
     onMount(() => {
