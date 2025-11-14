@@ -68,8 +68,9 @@
 <Banner />
 <Tagline />
 <div class="content">
-    <TerminalBox width={40} margin="1ch 2ch" title="Introduction">
-        <p>This website is owned by Emil (you might also know me as <a href="https://github.com/ObsidianPresidium">ObsidianPresidium</a>, or ember!), a developer, tech and open-source enthusiast 🧑‍💻 currently working at Cargoflux located in <span title="Denmark!">🇩🇰</span>, <span title="Europe!">🇪🇺</span>.</p>
+    <TerminalBox width={38} margin="1ch 2ch" title="Introduction">
+        <p>This website is owned by Emil (you might also know me as <a href="https://github.com/ObsidianPresidium">ObsidianPresidium</a>, or ember!), a developer, tech and open-source enthusiast 🧑‍💻 located in <span title="Denmark!">🇩🇰</span>, <span title="Europe!">🇪🇺</span></p>
+        <p>I am currently working at <a href="https://cargoflux.com">Cargoflux 📦</a> as a full-stack Ruby on Rails ♦️ developer intern.</p>
         <p>You're looking at my personal website, which I plan to turn into something cool later!</p>
     </TerminalBox>
     <TerminalBox width={35} margin="1ch 2ch" title="Favorite tools">
