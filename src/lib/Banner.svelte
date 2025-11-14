@@ -46,7 +46,6 @@
     let terrace = null;
     let pre: HTMLPreElement;
     let container: HTMLDivElement;
-    let testSize = () => null;
 
     const adjustScale = () => {
         if (!pre || !container) return;
