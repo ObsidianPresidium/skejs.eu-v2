@@ -7,6 +7,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
+		"host": "vite dev --host",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
@@ -26,6 +27,7 @@
 		"@fontsource/inter": "^5.2.5",
 		"@types/node": "^22.14.1",
 		"figlet": "^1.9.3",
+		"include-media": "^2.0.0",
 		"sass-embedded": "^1.86.3"
 	}
 }

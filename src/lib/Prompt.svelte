@@ -1,4 +1,5 @@
 <style lang="scss">
+    @import "include-media/dist/include-media";
     pre {
         color: #2db878;
         text-wrap-mode: wrap;
@@ -7,6 +8,12 @@
     .blink {
         color: white;
         animation: blink 1s linear infinite;
+    }
+
+    pre {
+        @include media("<=tablet") {
+            font-size: 1.25ch;
+        }
     }
 
     @keyframes blink {

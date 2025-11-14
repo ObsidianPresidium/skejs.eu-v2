@@ -13,8 +13,12 @@
 </script>
 <style lang="scss">
     @import "$lib/global";
+    @import "include-media/dist/include-media";
     .body {
         margin: 2rem;
+        @include media("<=tablet") {
+            margin: 0.5rem;
+        }
     }
     .bg {
         background-color: #1c1c1f;
@@ -47,6 +51,11 @@
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
+        @include media("<=tablet") {
+            scale: 0.75;
+            transform-origin: center top;
+            margin-bottom: -100%;
+        }
     }
 
     .prompt-container {
@@ -79,6 +88,10 @@
     </TerminalBox>
     <TerminalBox width={30} margin="1ch 2ch" title="Friends of Skejs">
         <p><a href="https://bambah.eu">🐱 bambah.eu</a></p>
+    </TerminalBox>
+    <TerminalBox width={40} margin="1ch 2ch" title="Kudos">
+        <p>This website is made with ❤️ in Svelte and deployed by Vercel. The ASCII art is programmatically generated with <a href="https://www.npmjs.com/package/figlet">figlet</a>.</p>
+        <p><a href="https://github.com/ObsidianPresidium/skejs.eu-v2">View the source code for this site here</a></p>
     </TerminalBox>
 </div>
 <div class="prompt-container">

@@ -1,8 +1,12 @@
 <style lang="scss">
+    @import "include-media/dist/include-media";
     p {
         margin-bottom: 4ch;
         font-style: italic;
         text-align: center;
+        @include media("<=tablet") {
+            font-size: 1.25ch;
+        }
     }
 </style>
 
