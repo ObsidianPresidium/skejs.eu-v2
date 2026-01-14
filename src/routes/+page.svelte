@@ -88,7 +88,9 @@
         <p><a href="https://mastodon.nu/@obbyluckyy">Mastodon.nu</a></p>
     </TerminalBox>
     <TerminalBox width={30} margin="1ch 2ch" title="Friends of Skejs">
+        <p><a href="https://tarpie.xyz">🌸 tarpie.xyz</a></p>
         <p><a href="https://bambah.eu">🐱 bambah.eu</a></p>
+        
     </TerminalBox>
     <TerminalBox width={40} margin="1ch 2ch" title="Kudos">
         <p>This website is made with ❤️ in Svelte and deployed by Vercel. The ASCII art is programmatically generated with <a href="https://www.npmjs.com/package/figlet">figlet</a>.</p>
