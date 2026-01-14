@@ -3,7 +3,7 @@
     import Prompt from "$lib/Prompt.svelte";
     import Tagline from "$lib/Tagline.svelte";
     import TerminalBox from "$lib/TerminalBox.svelte";
-    import { setSiteName } from "$lib/siteName";
+    import { setSiteName, siteName } from "$lib/siteName";
     import { onMount } from "svelte";
     
     onMount(() => {
@@ -65,7 +65,7 @@
 
 <div class="bg"></div>
 <div class="body">
-<Banner />
+<Banner text={$siteName}/>
 <Tagline />
 <div class="content">
     <TerminalBox width={38} margin="1ch 2ch" title="Introduction">
@@ -83,6 +83,7 @@
         </p>
     </TerminalBox>
     <TerminalBox width={30} margin="1ch 2ch" title="Socials">
+        <p><a href="blog">Blog</a></p>
         <p><a href="https://github.com/ObsidianPresidium">GitHub</a></p>
         <p><a href="https://linkedin.com/in/emil-aarestrup-a353a31b6">LinkedIn</a></p>
         <p><a href="https://mastodon.nu/@obbyluckyy">Mastodon.nu</a></p>
