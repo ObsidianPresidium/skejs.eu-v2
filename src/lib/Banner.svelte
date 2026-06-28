@@ -1,21 +1,23 @@
 <style lang="scss">
     @import "$lib/global";
-    pre {
-        position: absolute;
+
+    .banner {
+        font-family: monospace;
         font-size: 1rem;
-        white-space: pre;
+        font-weight: 700;
+        line-height: 1;
+        white-space: nowrap;
         margin: 0;
         color: transparent;
         background-image: linear-gradient(to right, #00ffb3, #00aeff, #00ffb3, #00aeff, #00ffb3);
         background-size: 200%;
         background-position-x: 0%;
         background-clip: text;
+        -webkit-background-clip: text;
         text-align: center;
-        overflow: visible;
-        transform-origin: center top;
-        will-change: transform;
+        max-width: 100%;
         animation: effect 4s infinite linear;
-        display: inline-block
+        display: inline-block;
     }
 
     .container {
@@ -24,7 +26,7 @@
         width: 100%;
         padding: 1rem 0;
         overflow: hidden;
-        
+        box-sizing: border-box;
     }
 
     @keyframes effect {
@@ -38,75 +40,44 @@
 </style>
 
 <script lang="ts">
-    import figlet from "figlet";
-    import { onMount } from "svelte";
+    import { onMount, tick } from "svelte";
 
-    let fig = $state("Emil Aarestrup");
-    let terrace = null;
-    let pre: HTMLPreElement;
+    let banner: HTMLHeadingElement;
     let container: HTMLDivElement;
-    let { text } = $props();
+    let { text } = $props<{ text: string }>();
 
-    const adjustScale = () => {
-        if (!pre || !container) return;
-        // available width for the banner (allow some padding)
-        const available = Math.max(0, container.clientWidth - 32);
-        const contentWidth = pre.scrollWidth || pre.getBoundingClientRect().width;
-        const scale = contentWidth > 0 ? Math.min(1, available / contentWidth) : 1;
-        pre.style.transform = `scale(${scale})`;
-        // Keep container height matching the scaled content to avoid layout jumps
-        const unscaledHeight = pre.clientHeight || pre.getBoundingClientRect().height;
-        container.style.height = `${unscaledHeight * scale}px`;
+    const adjustFontSize = () => {
+        if (!banner || !container) return;
+
+        const available = Math.max(0, Math.min(container.clientWidth, window.innerWidth) - 32);
+        if (available <= 0) return;
+
+        banner.style.fontSize = "100px";
+        const measuredWidth = banner.scrollWidth || banner.getBoundingClientRect().width;
+        if (measuredWidth <= 0) return;
+
+        banner.style.fontSize = `${Math.min(100, (available / measuredWidth) * 100)}px`;
     };
-    
-    
+
     onMount(() => {
-        let ro: ResizeObserver | null = null;
+        document.title = text.substring(0, 1).toUpperCase() + text.substring(1);
 
-        (async () => {
-            try {
-                const res = await fetch("/fonts/Terrace.flf");
-                if (res.ok) {
-                    const fontText = await res.text();
-                    if ((figlet as any).parseFont) {
-                        (figlet as any).parseFont("Terrace", fontText);
-                    }
-                }
-            } catch (e) {
-                // ignore font load errors; figlet will fall back
-            }
+        const ro = new ResizeObserver(() => adjustFontSize());
+        ro.observe(container);
 
-            document.title = text.substring(0, 1).toUpperCase() + text.substring(1);
-
-            try {
-                const rendered = await figlet.text(text, {
-                    font: "Terrace",
-                    whitespaceBreak: true
-                });
-                // keep the raw output; trim leading blank lines if needed
-                fig = rendered.replace(/^\n+/, "");
-                fig = fig.slice(8);
-            } catch (e) {
-                // fallback to plain text if figlet fails
-                fig = text;
-            }
-
-            // Observe container size changes (handles window resize and layout changes)
-            ro = new ResizeObserver(() => adjustScale());
-            ro.observe(container);
-
-            // also adjust once now
-            adjustScale();
-        })();
+        adjustFontSize();
 
         return () => {
-            if (ro) ro.disconnect();
+            ro.disconnect();
         };
+    });
+
+    $effect(() => {
+        text;
+        tick().then(adjustFontSize);
     });
 </script>
 
 <div class="container" bind:this={container}>
-    <pre bind:this={pre}>
-        {fig}
-    </pre>
+    <h1 class="banner" bind:this={banner}>{text}</h1>
 </div>
