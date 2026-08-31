@@ -9,4 +9,6 @@
     <p><a href="https://steamcommunity.com/market/search?appid=730">Market</a></p>
     <p><a href="https://csnades.gg">CSNades</a></p>
     <p><a href="https://faceit.com">FACEIT</a></p>
+    <p><a href="https://scl.gg/server">SCL prac server</a></p>
+    <p><a href="https://scl.gg/training/stats">SCL training server</a></p>
 </Box>
